@@ -1,4 +1,4 @@
-﻿namespace WpfApplication1.Model.Show
+﻿namespace Rukyou_Chat.Model.Show
 {
     interface iShow
     {

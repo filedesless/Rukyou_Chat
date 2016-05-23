@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace WpfApplication1.Model.Send
+namespace Rukyou_Chat.Model.Send
 {
     class Message : iSend
     {

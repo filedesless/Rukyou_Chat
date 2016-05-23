@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace WpfApplication1.Model.Show
+namespace Rukyou_Chat.Model.Show
 {
     class MessagesSince : iShow
     {

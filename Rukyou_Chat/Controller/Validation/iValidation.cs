@@ -1,4 +1,4 @@
-﻿namespace WpfApplication1.Controller.Validation
+﻿namespace Rukyou_Chat.Controller.Validation
 {
     interface iValidation
     {

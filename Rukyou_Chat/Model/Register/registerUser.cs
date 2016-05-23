@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace WpfApplication1.Model.Register
+namespace Rukyou_Chat.Model.Register
 {
     class registerUser : iRegister
     {

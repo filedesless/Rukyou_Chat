@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WpfApplication1.Controller.Validation
+namespace Rukyou_Chat.Controller.Validation
 {
     class ValidatePass : iValidation
     {

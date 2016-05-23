@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 
-namespace WpfApplication1.Model.MySQL
+namespace Rukyou_Chat.Model.MySQL
 {
     abstract class MySQL_Ancestor
     {

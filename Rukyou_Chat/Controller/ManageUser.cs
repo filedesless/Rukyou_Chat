@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WpfApplication1.Controller
+namespace Rukyou_Chat.Controller
 {
     class ManageUser
     {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace WpfApplication1.Model.Login
+namespace Rukyou_Chat.Model.Login
 {
     class loginAdmin : iLogin
     {

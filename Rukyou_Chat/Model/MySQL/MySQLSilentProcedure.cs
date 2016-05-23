@@ -1,6 +1,6 @@
 ﻿using System.Data;
 
-namespace WpfApplication1.Model.MySQL
+namespace Rukyou_Chat.Model.MySQL
 {
     class MySQLSilentProcedure : MySQL_Ancestor
     {
