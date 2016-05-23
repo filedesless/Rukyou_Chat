@@ -72,6 +72,7 @@
     <Compile Include="Controller\Validation\ValidateUser.cs" />
     <Compile Include="Model\Login\iLogin.cs" />
     <Compile Include="Model\Login\loginAdmin.cs" />
+    <Compile Include="Model\Login\loginGuest.cs" />
     <Compile Include="Model\Login\loginUser.cs" />
     <Compile Include="Model\MySQL\Connection.cs" />
     <Compile Include="Model\MySQL\MySQLFunction.cs" />

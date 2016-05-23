@@ -2,6 +2,6 @@
 {
     interface iLogin
     {
-        bool success(string user, string pass);
+        bool success();
     }
 }
