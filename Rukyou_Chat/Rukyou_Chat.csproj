@@ -55,7 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="MainWindow.xaml">
+    <Page Include="View\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -63,7 +63,30 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
+    <Compile Include="Controller\ManageMessage.cs" />
+    <Compile Include="Controller\ManageUser.cs" />
+    <Compile Include="Controller\Validation\iValidation.cs" />
+    <Compile Include="Controller\Validation\ValidateMail.cs" />
+    <Compile Include="Controller\Validation\ValidatePass.cs" />
+    <Compile Include="Controller\Validation\ValidateUser.cs" />
+    <Compile Include="Model\Login\iLogin.cs" />
+    <Compile Include="Model\Login\loginAdmin.cs" />
+    <Compile Include="Model\Login\loginUser.cs" />
+    <Compile Include="Model\MySQL\Connection.cs" />
+    <Compile Include="Model\MySQL\MySQLFunction.cs" />
+    <Compile Include="Model\MySQL\MySQLSilentProcedure.cs" />
+    <Compile Include="Model\MySQL\MySQLStoredProcedure.cs" />
+    <Compile Include="Model\MySQL\MySQL_Ancestor.cs" />
+    <Compile Include="Model\Register\iRegister.cs" />
+    <Compile Include="Model\Register\registerAdmin.cs" />
+    <Compile Include="Model\Register\registerUser.cs" />
+    <Compile Include="Model\Send\Action.cs" />
+    <Compile Include="Model\Send\iSend.cs" />
+    <Compile Include="Model\Send\Message.cs" />
+    <Compile Include="Model\Show\iShow.cs" />
+    <Compile Include="Model\Show\Messages.cs" />
+    <Compile Include="Model\Show\MessagesSince.cs" />
+    <Compile Include="View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
@@ -95,6 +118,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
