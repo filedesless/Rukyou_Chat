@@ -25,32 +25,25 @@ namespace Rukyou_Chat.Model.MySQL
         {
             bool OK = true;
 
-            using (connection = new MySqlConnection())
+            using (connection = new MySqlConnection(connectionString))
                 try
                 {
-                    connection.ConnectionString = connectionString;
                     connection.Open();
-                    connection.Close();
-                    connection.Dispose();
                 }
-                catch (MySqlException Erreur)
+                catch (MySqlException err)
                 {
-                    connection.Dispose();
                     OK = false;
-                    throw new System.Exception(Erreur.Message);
+                    throw new System.Exception(err.Message);
                 }
-                catch (Exception Erreur)
+                catch (Exception err)
                 {
-                    connection.Dispose();
                     OK = false;
-                    throw new System.Exception(Erreur.Message);
+                    throw new System.Exception(err.Message);
                 }
                 finally
                 {
                     if (connection.State == ConnectionState.Open)
-                    {
                         connection.Close();
-                    }
                 }
             return (OK);
         }
@@ -59,52 +52,47 @@ namespace Rukyou_Chat.Model.MySQL
         {
             DataTable table = new DataTable();
 
-            connection = new MySqlConnection();
             command = new MySqlCommand();
             adapter = new MySqlDataAdapter();
-            try
-            {
-                connection.ConnectionString = connectionString;
-                command.Connection = connection;
-                command.CommandText = sql;
-                command.CommandType = type;
-
-                foreach (MySqlParameter LeParam in paramList)
+            using (connection = new MySqlConnection(connectionString))
+                try
                 {
-                    command.Parameters.Add(LeParam);
-                }
+                    command.Connection = connection;
+                    command.CommandText = sql;
+                    command.CommandType = type;
 
-                adapter.SelectCommand = command;
-                connection.Open();
-                adapter.Fill(table);
-                connection.Close();
-                connection.Dispose();
-            }
-            catch (MySqlException Erreur)
-            {
-                throw new System.Exception(Erreur.Message);
-            }
-            catch (Exception Erreur)
-            {
-                throw new System.Exception(Erreur.Message);
-            }
-            finally
-            {
-                if (connection.State == ConnectionState.Open)
-                {
+                    foreach (MySqlParameter LeParam in paramList)
+                    {
+                        command.Parameters.Add(LeParam);
+                    }
+
+                    adapter.SelectCommand = command;
+                    connection.Open();
+                    adapter.Fill(table);
                     connection.Close();
                 }
-            }
+                catch (MySqlException err)
+                {
+                    throw new System.Exception(err.Message);
+                }
+                catch (Exception err)
+                {
+                    throw new System.Exception(err.Message);
+                }
+                finally
+                {
+                    if (connection.State == ConnectionState.Open)
+                        connection.Close();
+                }
             return (table);
         }
 
         public void runNonQuery(string sql, List<MySqlParameter> paramList)
         {
-            connection = new MySqlConnection();
             command = new MySqlCommand();
-            try
-            {
-                connection.ConnectionString = connectionString;
+            using (connection = new MySqlConnection(connectionString))
+                try
+                {
                 command.Connection = connection;
                 command.CommandText = sql;
                 command.CommandType = type;
@@ -117,24 +105,20 @@ namespace Rukyou_Chat.Model.MySQL
                 connection.Open();
                 command.ExecuteNonQuery();
                 connection.Close();
-
-                connection.Dispose();
-            }
-            catch (MySqlException Erreur)
-            {
-                throw new Exception(Erreur.Message);
-            }
-            catch (Exception Erreur)
-            {
-                throw new Exception(Erreur.Message);
-            }
-            finally
-            {
-                if (connection.State == ConnectionState.Open)
-                {
-                    connection.Close();
                 }
-            }
+                catch (MySqlException err)
+                {
+                    throw new Exception(err.Message);
+                }
+                catch (Exception err)
+                {
+                    throw new Exception(err.Message);
+                }
+                finally
+                {
+                    if (connection.State == ConnectionState.Open)
+                        connection.Close();
+                }
         }
     }
 }
