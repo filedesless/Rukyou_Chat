@@ -4,10 +4,18 @@ namespace Rukyou_Chat.Model.Login
 {
     class loginAdmin : iLogin
     {
-        public bool success(string user, string pass)
+        private string username;
+        private string password;
+
+        public loginAdmin(string user, string pass)
         {
-            MySQL.MySQL_Ancestor sql = new MySQL.MySQLFunction("");
-            return true;
+            this.username = user;
+            this.password = pass;
+        }
+
+        public bool success()
+        {
+            throw new NotImplementedException();
         }
     }
 }
