@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Rukyou_Chat.Controller;
 
 namespace Rukyou_Chat.View
 {
@@ -19,11 +20,27 @@ namespace Rukyou_Chat.View
     /// </summary>
     public partial class ChatBox : Window
     {
+
+        ManageMessage mm;
+
+
         public ChatBox()
         {
             InitializeComponent();
 
             txtInput.Focus();
+            mm = new ManageMessage("htll");
+
+            List<string> messages = mm.showMessages();
+
+            foreach (string message in messages)
+            {
+                txtOutput.Text += message + "\n";
+            }
+        }
+
+        private void btnSend_Click(object sender, RoutedEventArgs e)
+        {
         }
     }
 }

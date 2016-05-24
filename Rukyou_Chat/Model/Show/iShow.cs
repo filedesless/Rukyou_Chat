@@ -1,7 +1,9 @@
-﻿namespace Rukyou_Chat.Model.Show
+﻿using System.Collections.Generic;
+
+namespace Rukyou_Chat.Model.Show
 {
     interface iShow
     {
-        string[] go();
+        List<string> show();
     }
 }
