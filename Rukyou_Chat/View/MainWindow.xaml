@@ -1,11 +1,17 @@
-﻿<Window x:Class="Rukyou_Chat.MainWindow"
+﻿<Window x:Class="Rukyou_Chat.View.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Rukyou_Chat"
+        xmlns:local="clr-namespace:Rukyou_Chat.View"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
+    <Window.Background>
+        <RadialGradientBrush>
+            <GradientStop Color="#FF141751" Offset="0"/>
+            <GradientStop Color="#FF121430" Offset="1"/>
+        </RadialGradientBrush>
+    </Window.Background>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -21,10 +27,10 @@
         </Grid.ColumnDefinitions>
         <Label x:Name="lblUser" Content="Username :" HorizontalAlignment="Right" Margin="10,0" Grid.Row="1" VerticalAlignment="Center" HorizontalContentAlignment="Right" Width="69" Height="26"/>
         <Label x:Name="lblPass" Content="Password :" HorizontalAlignment="Right" Margin="10,0" Grid.Row="2" VerticalAlignment="Center" HorizontalContentAlignment="Right" Width="65" Height="26"/>
-        <TextBox x:Name="txtUser" Grid.Column="1" Margin="10,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Stretch" HorizontalContentAlignment="Left"/>
-        <TextBox x:Name="txtPass" Grid.Column="1" Margin="10,0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Stretch" HorizontalContentAlignment="Left"/>
+        <TextBox x:Name="txtUser" Grid.Column="1" Margin="10,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Stretch" HorizontalContentAlignment="Left" Text="aiglebleu"/>
+        <TextBox x:Name="txtPass" Grid.Column="1" Margin="10,0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Stretch" HorizontalContentAlignment="Left" Text="test"/>
         <StackPanel Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Center" FlowDirection="RightToLeft" Orientation="Horizontal" Margin="10,0" Grid.Column="1">
-            <Button x:Name="btnLogin" Content="Login" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="5,5" Margin="10,0"/>
+            <Button x:Name="btnLogin" Content="Login" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="5,5" Margin="10,0" Click="btnLogin_Click" IsDefault="True"/>
             <Button x:Name="btnRegister" Content="Register" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="5,5" Margin="10,0"/>
         </StackPanel>
     </Grid>

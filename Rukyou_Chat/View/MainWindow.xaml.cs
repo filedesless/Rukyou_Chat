@@ -12,8 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Rukyou_Chat.Controller;
 
-namespace Rukyou_Chat
+namespace Rukyou_Chat.View
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -23,6 +24,19 @@ namespace Rukyou_Chat
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void btnLogin_Click(object sender, RoutedEventArgs e)
+        {
+            ManageUser mu = new ManageUser();
+            if (mu.login(txtUser.Text, txtPass.Text))
+            {
+                this.Hide();
+                new ChatBox().ShowDialog();
+                this.Show();
+            }
+            else
+                MessageBox.Show("failed");
         }
     }
 }
