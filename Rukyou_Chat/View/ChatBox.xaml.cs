@@ -22,6 +22,8 @@ namespace Rukyou_Chat.View
         public ChatBox()
         {
             InitializeComponent();
+
+            txtInput.Focus();
         }
     }
 }

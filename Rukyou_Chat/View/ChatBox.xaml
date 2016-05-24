@@ -26,9 +26,11 @@
                 </LinearGradientBrush>
             </TextBlock.Background>
         </TextBlock>
-        <DockPanel HorizontalAlignment="Stretch" Grid.Row="1" VerticalAlignment="Stretch" FlowDirection="RightToLeft" LastChildFill="True">
-            <Button x:Name="button" Content="Button" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5,0" MinHeight="26"/>
-            <TextBox x:Name="txtInput" HorizontalAlignment="Stretch" TextWrapping="Wrap" VerticalAlignment="Center" Margin="5,0" MinHeight="26"/>
+        <DockPanel HorizontalAlignment="Stretch" Grid.Row="1" VerticalAlignment="Stretch" LastChildFill="True">
+            <Button x:Name="button" Content="Send" HorizontalAlignment="Right" DockPanel.Dock="Right"
+                    VerticalAlignment="Center" Margin="5,0" MinHeight="26" IsDefault="True" Padding="5,0" Cursor="Hand"/>
+            <TextBox x:Name="txtInput" TextWrapping="Wrap" VerticalAlignment="Center" TextAlignment="Left"
+                     DockPanel.Dock="Left" Margin="5,0" MinHeight="26" Cursor="IBeam"/>
         </DockPanel>
     </Grid>
 </Window>
